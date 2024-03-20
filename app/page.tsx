@@ -25,11 +25,11 @@ export default function Home() {
   }
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-6 w-full mx-auto items-center  ">
+      <div className="flex flex-col md:flex-row  w-full mx-auto items-center  ">
         {
           allForms.map((form, key) => (
 
-            <div key={key} className="grid grid-cols-1 md:grid-cols-4 items-center ">
+            <div key={key} className="grid grid-cols-1 md:grid-cols-4 items-center  ">
               <RoundedStatus tick={allForms.indexOf(form) < currentForm} number={allForms.indexOf(form) + 1} title={form.formName} />
               {allForms.indexOf(form) !== allForms.length - 1 ? <div className="mx-auto w-1 h-10 md:w-24 md:h-1 bg-white"></div> : null}
             </div>

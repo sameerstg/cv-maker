@@ -23,7 +23,7 @@ const personalDetails: form = {
         },
         {
             label: "Contact Number",
-            type: "text",
+            type: "tel",
             mandatory: true
 
         },
