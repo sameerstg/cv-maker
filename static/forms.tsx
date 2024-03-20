@@ -6,7 +6,7 @@ const personalDetails: form = {
             label: "Name",
             type: "text",
             mandatory: true,
-            
+
 
         },
         {
@@ -140,4 +140,5 @@ export interface field {
     type: string;
     mandatory: boolean;
     textArea?: boolean;
+    size?:Number;
 }
