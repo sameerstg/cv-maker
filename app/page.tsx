@@ -4,7 +4,7 @@ import RoundedStatus from "@/app/components/RoundedStatus";
 import { allForms } from '@/static/forms'
 import { ReactEventHandler, useState } from "react";
 export default function Home() {
-  const [currentForm, setcurrentForm] = useState(0)
+  const [currentForm, setcurrentForm] = useState(0);
   function handleNext(e: any) {
 
     e.preventDefault();
@@ -19,9 +19,7 @@ export default function Home() {
     setcurrentForm(currentForm - 1);
   }
   function handleSubmit(e: any) {
-
     e.preventDefault();
-
   }
   return (
     <>
