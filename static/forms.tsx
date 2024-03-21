@@ -3,7 +3,8 @@ import { form } from "@/app/components/Form";
 const personalDetails: form = {
     formName: "Personal Details", fieldsWithType: [
         {
-            label: "Name",
+            title: "Full Name",
+            label: "eg: Sameer Ahmed",
             type: "text",
             mandatory: true,
 
@@ -98,6 +99,7 @@ const workHistory: form = {
 
         },
         {
+            title: "Technologies",
             label: "Technologies e.g: Python, Photoshop, Blender, Game Development",
             type: "text",
             mandatory: false
@@ -112,15 +114,9 @@ const workHistory: form = {
     ]
 };
 const skills: form = {
-    formName: "Skills", fieldsWithType: [
-        {
-            label: "Skills",
-            type: "text",
-            mandatory: true,
-            textArea: true
-
-        }
-    ]
+    formName: "Skills",
+    fieldsWithType: [],
+    skills: true
 };
 const education: form = {
     formName: "Education", fieldsWithType: [
@@ -136,9 +132,10 @@ const education: form = {
 
 export const allForms: form[] = [personalDetails, summary, workHistory, skills];
 export interface field {
-    label: string;
-    type: string;
+    title?: string;
+    label?: string;
+    type?: string;
     mandatory: boolean;
     textArea?: boolean;
-    size?:Number;
+    size?: Number;
 }

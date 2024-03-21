@@ -2,7 +2,9 @@
 import Form, { form } from "@/app/components/Form";
 import RoundedStatus from "@/app/components/RoundedStatus";
 import { allForms } from '@/static/forms'
-import { ReactEventHandler, useState } from "react";
+import { useState } from "react";
+import SkillsAdd from "../components/SkillsAdd";
+
 export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
   function handleNext(e: any) {
@@ -19,9 +21,7 @@ export default function Home() {
     setcurrentForm(currentForm - 1);
   }
   function handleSubmit(e: any) {
-
     e.preventDefault();
-
   }
   return (
     <>
@@ -40,7 +40,7 @@ export default function Home() {
       </div>
 
       {
-        < Form formName={allForms[currentForm].formName} fieldsWithType={allForms[currentForm].fieldsWithType} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
+        < Form formName={allForms[currentForm].formName}  skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
       }
 
     </>
