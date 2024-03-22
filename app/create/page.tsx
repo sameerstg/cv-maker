@@ -4,9 +4,21 @@ import RoundedStatus from "@/app/components/RoundedStatus";
 import { allForms } from '@/static/forms'
 import { useState } from "react";
 import SkillsAdd from "../components/SkillsAdd";
+import { Console } from "console";
 
 export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
+
+  const [data, setData] = useState<Data[]>([])
+
+
+  function AddData(newData: Data) {
+    setData([...data, newData])
+    data.forEach(data => {
+
+      console.log(data);
+    });
+  }
   function handleNext(e: any) {
 
     e.preventDefault();
@@ -40,10 +52,14 @@ export default function Home() {
       </div>
 
       {
-        < Form formName={allForms[currentForm].formName}  skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
+        < Form formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
       }
 
     </>
   );
 }
 
+export interface Data {
+  key: string;
+  value: string;
+}

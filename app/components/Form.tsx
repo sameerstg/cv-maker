@@ -63,6 +63,7 @@ export interface form {
   nextCallback?: (e: any) => void;
   backCallback?: (e: any) => void;
   submitCallback?: (e: any) => void;
+  
   back?: boolean;
   next?: boolean;
 }

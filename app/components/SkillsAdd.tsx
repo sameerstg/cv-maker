@@ -4,12 +4,12 @@ function SkillsAdd() {
     const [skills, setSkills] = useState<string[]>([]);
 
     function addSkill(e: any) {
-        if (e.key !== "Enter") return;
-        const inputField = document.querySelector(".addSkill") as HTMLInputElement;
-        if (inputField.value.trim() !== "") {
-            setSkills([...skills, inputField.value]);
-            inputField.value = "";
-        }
+        // if (e.key !== "Enter") return;
+        // const inputField = document.querySelector(".addSkill") as HTMLInputElement;
+        // if (inputField.value.trim() !== "") {
+        //     setSkills([...skills, inputField.value]);
+        //     inputField.value = "";
+        // }
     }
     function addSkillButton(b: any) {
         const inputField = document.querySelector(".addSkill") as HTMLInputElement;
@@ -19,7 +19,7 @@ function SkillsAdd() {
         }
     }
     function removeSkill(index: number) {
-        // setSkills(skills.filter((_, idx) => idx !== index));
+        setSkills(skills.filter((_, idx) => idx !== index));
     }
     return (
         <div className='flex flex-col  justify-center  text-center w-full mx-auto gap-8 my-4'>
@@ -31,7 +31,7 @@ function SkillsAdd() {
             <div className="flex gap-2 flex-wrap md:justify-center">
                 {
                     skills.map((skill, key) => (
-                        <button key={key} onClick={() => removeSkill(key)} className="px-2 py-1 rounded-lg bg-[#262626] focus:outline-none">
+                        <button key={key} onClick={() => removeSkill(key)} className="px-2 py-1 rounded-lg bg-[#262626] hover:bg-red-500 focus:outline-none">
                             {skill}
                         </button>
 

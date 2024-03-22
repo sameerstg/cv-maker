@@ -60,7 +60,7 @@ const summary: form = {
         }
     ]
 };
-const workHistory: form = {
+export const workHistory: form = {
     formName: "Work History", fieldsWithType: [
         {
             label: "Company Name",
