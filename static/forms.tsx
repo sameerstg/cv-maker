@@ -157,8 +157,8 @@ export interface Experience {
     title?: string;
     country?: string;
     city?: string;
-    startDate?: Date;
-    endDate?: Date;
+    startDate?: string;
+    endDate?: string;
     description?: string[];
     technologies?: string[];
 }
@@ -170,7 +170,7 @@ export interface Education {
     grade?: string;
     projects?: string[];
 }
-export const sampleExperience: Experience = {
+export const eviarExp: Experience = {
     company: "Eviar",
     title: "Vr Game Developer",
     country: "Pakistan",
@@ -183,11 +183,61 @@ export const sampleExperience: Experience = {
         "Acted as a sole developer, taking ownership of the entire game development process, including concept ideation, coding, design, and testing.",
         "Maintained a strong focus on user experience, optimizing game mechanics and interactions to enhance player engagement.",
     ],
-    // startDate: Date(),
-    // endDate: Date(),
+    startDate: Date(),
+    endDate: Date(),
 
 }
-export const sampleEducation: Education = {
+export const blossomExp: Experience = {
+    company: "BLOSSOM HEAVEN",
+    title: "Unity Game Developer",
+    country: "Pakistan",
+    city: "Karachi",
+    technologies: ["c#", "blender", "unity", "c"],
+    description: ["Implemented state machine design pattern to create efficient and dynamic game mechanics and systems."
+        , "Created captivating character animations, bringing life and personality to in-game characters.",
+
+        "Designed visually appealing and user-friendly UI to enhance player experience and engagement.",
+        "Utilized Git for version control, ensuring smooth collaboration and effective code management.",
+        "Proactively kept up to date with the latest trends and advancements in game development to deliver cuttingedge gaming experiences",
+        "Employed strong problem-solving skills to optimize game performance, ensuring seamless gameplay.",
+    ],
+    startDate: Date(),
+    endDate: Date(),
+
+}
+export const suhangExp: Experience = {
+    company: "SUHANG CORPORATION",
+    title: "Marketing Officer",
+    country: "Pakistan",
+    city: "Karachi",
+    technologies: ["Email Marketing", "Ad Campaign", "Lead Generation", "Post Creation"],
+    description: [
+        "Designed and curated compelling social media posts, using graphic designing and video editing skills to create visually captivating content.",
+        "Strategically managed social media marketing campaigns, driving brand awareness and engagement across various platforms.",
+        "Utilized data analytics and insights to optimize social media strategies, enhancing overall campaign performance.",
+        "Stayed updated with industry trends and best practices, continuously improving social media marketing strategies.",
+
+    ],
+    startDate: Date(),
+    endDate: Date(),
+
+}
+export const freelance: Experience = {
+    company: "Freelance",
+    title: "Services of Game Development and App/Web Development",
+    country: "Pakistan",
+    city: "Karachi",
+    technologies: ["c#", "blender", "unity", "ar", "vr", "javascript", "c", "python", "react", "automation", "3d animation"],
+    description: ["Managed multiple projects simultaneously, ensuring timely delivery and exceeding client expectations.",
+        "Effectively communicated with clients to understand project requirements, provide updates, and address any queries or concerns.",
+        "Demonstrated strong problem, solving skills, resolving complex technical issues efficiently during the development process.",
+        " Proactively stayed updated with the latest trends and advancements in game development, web development,and app development.",
+    ],
+    startDate: Date(),
+    endDate: Date(),
+
+}
+export const uni: Education = {
     fieldOfStudy: "Software Engineering",
     organization: "Iqra University",
     startDate: Date(),
@@ -196,6 +246,15 @@ export const sampleEducation: Education = {
     projects: [
         "Custom inverter assembly with cutoff system (Physics project)",
         "Hand detection software development (Programming fundamentals project)",
+    ],
+}
+export const aptech: Education = {
+    fieldOfStudy: "Unity GAME DEVELOPMENT AND 3D MODELLING",
+    organization: "Aptech Sponsored/Scholarship by NAVTTC",
+    startDate: Date(),
+    endDate: Date(),
+    projects: [
+        "Designed and developed a survival game, successfully presenting it at a institute functions, highlighting the practical application of your game development skills",
     ],
 }
 export const sampleCv: cv = {
@@ -208,6 +267,6 @@ export const sampleCv: cv = {
     jobTitle: "Vr Game Developer",
     summary: "A Geek who have a keen interest in technologies",
     skills: ["c#", "blender", "unity", "ar", "vr", "javascript", "c", "python"],
-    experience: [sampleExperience],
-    education: [sampleEducation],
+    experience: [eviarExp, blossomExp, freelance, suhangExp],
+    education: [uni,aptech],
 };

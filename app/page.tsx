@@ -8,11 +8,13 @@ function page() {
             <h1 className='text-lg md:text-5xl font-bold'>Welcome to Cv/Resume maker...</h1>
             <div className='flex flex-col gap-4'>
                 <Link href='/create'>
-                    <button className='bg-neutral-600 p-1 md:p-2 rounded-lg w-2/3 md:w-2/6'>Create</button>
+                    <button className='bg-neutral-600 p-1 md:p-2 rounded-lg w-2/3 md:w-2/6'>Create CV</button>
                 </Link>
-                <div className='w-5'></div>
-                <Link href='/preview'>
-                    <button className='bg-neutral-600 p-1 md:p-2 rounded-lg w-2/3 md:w-2/6 '>Preview Cv/Resume</button>
+                <Link href='/myCv'>
+                    <button className='bg-neutral-600 p-1 md:p-2 rounded-lg w-2/3 md:w-2/6 '>Preview My CV</button>
+                </Link>
+                <Link href='/sampleCv'>
+                    <button className='bg-neutral-600 p-1 md:p-2 rounded-lg w-2/3 md:w-2/6 '>Sample CV</button>
                 </Link>
             </div>
         </div>
