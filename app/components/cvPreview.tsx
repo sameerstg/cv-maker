@@ -10,7 +10,7 @@ interface cvTagInterface {
     cv: cv;
     noDownloadable?: boolean;
 }
-function CvPreview(props: cvTagInterface) {
+export default function Cvpreview(props: cvTagInterface) {
     const sample = props.cv;
     const currentCvRef = useRef(null);
     const handleGeneratePdf = async () => {
@@ -153,5 +153,3 @@ function CvPreview(props: cvTagInterface) {
     )
 
 }
-
-export default CvPreview

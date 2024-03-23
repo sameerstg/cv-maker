@@ -61,17 +61,19 @@ const summary: form = {
     ]
 };
 export const workHistory: form = {
+
+    experience: true,
     formName: "Work History", fieldsWithType: [
         {
             label: "Company Name",
             type: "text",
-            mandatory: false
+            mandatory: true
 
         },
         {
             label: "Job Title",
             type: "text",
-            mandatory: false
+            mandatory: true
 
         },
         {
@@ -138,6 +140,7 @@ export interface field {
     mandatory: boolean;
     textArea?: boolean;
     size?: Number;
+    inputRef?: any;
 }
 export interface cv {
     name?: string;
@@ -268,5 +271,5 @@ export const sampleCv: cv = {
     summary: "A Geek who have a keen interest in technologies",
     skills: ["c#", "blender", "unity", "ar", "vr", "javascript", "c", "python"],
     experience: [eviarExp, blossomExp, freelance, suhangExp],
-    education: [uni,aptech],
+    education: [uni, aptech],
 };

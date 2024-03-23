@@ -1,24 +1,19 @@
 'use client'
-import Form, { form } from "@/app/components/Form";
+import Form from "@/app/components/Form";
 import RoundedStatus from "@/app/components/RoundedStatus";
-import { allForms } from '@/static/forms'
-import { useState } from "react";
-import SkillsAdd from "../components/SkillsAdd";
-import { Console } from "console";
+import { allForms, cv } from '@/static/forms'
+import { useRef, useState } from "react";
 
 export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
 
-  const [data, setData] = useState<Data[]>([])
+  const [cv, setCv] = useState<cv | null>(null)
+  const handleCvFromChild = (cv: cv) => {
+    setCv(cv);
+    console.log(cv.name);
+  };
 
 
-  function AddData(newData: Data) {
-    setData([...data, newData])
-    data.forEach(data => {
-
-      console.log(data);
-    });
-  }
   function handleNext(e: any) {
 
     e.preventDefault();
@@ -34,7 +29,9 @@ export default function Home() {
   }
   function handleSubmit(e: any) {
     e.preventDefault();
+    
   }
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4  w-full">
@@ -52,7 +49,7 @@ export default function Home() {
       </div>
 
       {
-        < Form formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
+        < Form experience={allForms[currentForm].experience} onDataClick={handleCvFromChild} formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
       }
 
     </>

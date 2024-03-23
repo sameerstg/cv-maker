@@ -1,8 +1,8 @@
 'use client'
 import { cv, sampleCv } from '@/static/forms'
 import React, { useState } from 'react'
-import CvPreview from '@/app/components/CvPreview'
-function page() {
+import Cvpreview from '../components/CvPreview'
+function Page() {
     const [cvs, setCvs] = useState<cv[]>([sampleCv,sampleCv,sampleCv,sampleCv])
     return (
         <div className=' mx-4'>
@@ -11,7 +11,7 @@ function page() {
                 cvs.map((cv, key) => (
 
                     <div key={key}>
-                        <CvPreview cv={cv}/>
+                        <Cvpreview cv={cv}/>
                     </div>
                 ))
             }
@@ -20,4 +20,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
