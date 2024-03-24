@@ -1,5 +1,5 @@
 'use client'
-import InputField from "@/app/components/InputField";
+import InputField from "@/components/InputField";
 import { cv, field } from "@/static/forms";
 import SkillsAdd from "./SkillsAdd";
 import { useRef } from "react";

@@ -1,6 +1,6 @@
 'use client'
-import Form from "@/app/components/Form";
-import RoundedStatus from "@/app/components/RoundedStatus";
+import Form from "@/components/Form";
+import RoundedStatus from "@/components/RoundedStatus";
 import { allForms, cv } from '@/static/forms'
 import { useRef, useState } from "react";
 
@@ -29,7 +29,7 @@ export default function Home() {
   }
   function handleSubmit(e: any) {
     e.preventDefault();
-    
+
   }
 
   return (

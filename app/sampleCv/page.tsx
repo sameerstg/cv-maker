@@ -3,9 +3,9 @@ import { cv, sampleCv } from '@/static/forms';
 import React, { useRef } from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import Cvpreview from '../components/CvPreview';
+import Cvpreview from '../../components/CvPreview';
 
-export default function page() {
+export default function Page() {
     const currentCvRef = useRef(null);
     const handleGeneratePdf = async () => {
         try {

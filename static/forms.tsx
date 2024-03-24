@@ -1,4 +1,4 @@
-import { form } from "@/app/components/Form";
+import { form } from "@/components/Form";
 
 const personalDetails: form = {
     formName: "Personal Details", fieldsWithType: [
