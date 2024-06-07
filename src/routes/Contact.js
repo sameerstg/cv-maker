@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero';
 import contact from '../components/Assets/contact.png';
 import ContactForm from '../components/ContactForm';
@@ -9,7 +8,6 @@ import Copyright from "../components/Copyright"
 function Contact() {
     return(
         <>
-        <Navbar />
         <Hero
         cName="hero-about"
         heroImg={contact}

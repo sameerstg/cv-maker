@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero';
 import about from '../components/Assets/about.png';
 import TeamInfo from '../components/TeamInfo';
@@ -8,7 +7,6 @@ import Copyright from "../components/Copyright"
 function About() {
     return(
         <>
-        <Navbar />
         <Hero
         cName="hero-about"
         heroImg={about}

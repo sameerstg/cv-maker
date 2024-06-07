@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero';
 import home from '../components/Assets/home.png';
 import useTypingEffect from '../components/useTypingEffect';
@@ -18,7 +17,6 @@ function Home() {
 
   return (
     <>
-      <Navbar />
       <Hero
         cName="hero"
         heroImg={home}

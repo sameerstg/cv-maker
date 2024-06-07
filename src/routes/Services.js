@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero';
 import services from '../components/Assets/services.png';
 import ServiceInfo from '../components/ServiceInfo';
@@ -8,7 +7,6 @@ import Copyright from '../components/Copyright';
 function Services() {
     return(
         <>
-        <Navbar />
         <Hero
         cName="hero-about"
         heroImg={services}
