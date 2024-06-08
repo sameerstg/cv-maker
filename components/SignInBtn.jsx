@@ -12,10 +12,10 @@ export default function SignInBtn() {
 
   const { status } = useSession();
   return (
-    <div className="mx-auto">
+    <div className="">
 
       {status === "authenticated" ? (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex  justify-center items-center">
           <UserInfo/>
           <button
             onClick={() => signOut()}
@@ -27,8 +27,8 @@ export default function SignInBtn() {
       ) : (
         <button
           onClick={() => signIn("google")}
-          className="bg-slate-900 text-white px-6 py-2 rounded-md flex justify-center items-center align-middle gap-10">
-          <img src="/google-logo.png" className="h-12 w-12" /><div>Sign In</div>
+          className="font-bold px-6 py-2 rounded-md flex justify-center items-center align-middle gap-2">
+          <img src="/google-logo.png" className="h-12 w-12" /><div className="bg-black px-4 py-2 rounded-lg">Sign In With Google</div>
         </button>
       )}
     </div>

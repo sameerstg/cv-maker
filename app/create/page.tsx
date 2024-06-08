@@ -8,9 +8,9 @@ export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
 
   const [cv, setCv] = useState<cv | null>(null)
-  const handleCvFromChild = (cv: cv) => {
-    setCv(cv);
-    console.log(cv.name);
+  const [data, setData] = useState<Data[]>([]);
+  const handleCvFromChild = (cv: any) => {
+    // setCv(cv);
   };
 
 
@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="bg-[#171717] h-[100vh] flex flex-col justify-center px-4">
       <div className="grid grid-cols-1 md:grid-cols-4  w-full">
         {
           allForms.map((form, key) => (
@@ -52,7 +52,7 @@ export default function Home() {
         < Form experience={allForms[currentForm].experience} onDataClick={handleCvFromChild} formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
       }
 
-    </>
+    </div>
   );
 }
 

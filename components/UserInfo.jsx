@@ -9,18 +9,19 @@ export default function UserInfo() {
 
   if (status === "authenticated") {
     return (
-      <div className="shadow-xl p-8 rounded-md flex flex-col gap-3 justify-center items-center">
-        <Image
-          className="rounded-full"
-          src={session?.user?.image}
-          width={60}
-          height={60}
-        />
-        <div>
-          Name: <span className="font-bold">{session?.user?.name}</span>
-        </div>
-        <div>
-          Email: <span className="font-bold">{session?.user?.email}</span>
+      <div className="shadow-xl p-8 rounded-md flex text-black font-bold gap-3 justify-center items-center">
+        <div className="flex flex-col text-center">
+
+            <img
+              className="rounded-full h-8 w-8 mx-auto"
+              src={session?.user?.image}
+            />
+          <div>
+             <span className="font-bold">{session?.user?.name}</span>
+          </div>
+          <div>
+            <span className="font-bold">{session?.user?.email}</span>
+          </div>
         </div>
       </div>
     );

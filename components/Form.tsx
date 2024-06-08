@@ -2,40 +2,40 @@
 import InputField from "@/components/InputField";
 import { cv, field } from "@/static/forms";
 import SkillsAdd from "./SkillsAdd";
-import { useRef } from "react";
+import { useState } from "react";
 import ExperienceAdd from "./ExperinceAdd";
 import Link from "next/link";
 
 export default function Form(props: form) {
+  interface Data {
+    key: string,value: string;
+  }
+  const [data, setData] = useState<Data[]>([]);
 
-
-  const ref = useRef<cv>()
-
-  // const inputRefs = useRef<string[]>(Array.from({ length: props.fieldsWithType.length }, () => ''));
-
-
+  
+  function onValueChange(key: string, value: string) {
+    if (props.onDataClick) {
+      // Find index of the key in data
+      const index = data.findIndex(item => item.key === key);
+      
+      if (index !== -1) {
+        const newData = data;
+        data[index].value = value
+        setData(newData);
+        } else {
+          setData(data => [...data, { key, value }]);
+      }
+      
+      console.log(data);
+  
+      // props.onDataClick({});
+    }
+  }
   function submit(e: React.FormEvent<HTMLFormElement>) {
+
     e.preventDefault();
 
-    if (props.onDataClick) {
 
-      // inputRefs.current.forEach(x => (
-
-      //   console.log(x)
-
-      // ))
-      // const newCv: cv = {};
-      // inputRefs.current.forEach(element => {
-      //   if (element == "name") {
-
-      //   }
-      //   else if (element == "jobTitle") {
-
-      //   }
-      // });
-      // newCv.name = "Sameer";
-      // props.onDataClick(newCv);
-    }
     if (props.next && props.nextCallback) {
       props.nextCallback(e);
     } else if (props.submitCallback) {
@@ -66,14 +66,14 @@ export default function Form(props: form) {
                 field.textArea ?
                   <div key={key} className="w-full md:col-span-2" >
                     {
-                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
+                      <InputField inputRef={field.inputRef} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
                     }
                   </div>
                   :
                   <div key={key} className="w-full ">
                     {
 
-                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
+                      <InputField inputRef={field.inputRef} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
 
 
                     }
@@ -115,7 +115,7 @@ export interface form {
   nextCallback?: (e: any) => void;
   backCallback?: (e: any) => void;
   submitCallback?: (e: any) => void;
-  onDataClick?: (cv: cv) => void;
+  onDataClick?: (cv: any) => void;
   back?: boolean;
   next?: boolean;
 }

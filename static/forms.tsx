@@ -7,43 +7,50 @@ const personalDetails: form = {
             label: "eg: Sameer Ahmed",
             type: "text",
             mandatory: true,
+            inputRef:"Full Name"
 
 
         },
         {
             label: "Job Title",
             type: "text",
-            mandatory: true
+            mandatory: true,
+            inputRef: "Job Title",
 
         },
         {
             label: "Email",
             type: "text",
-            mandatory: false
+            mandatory: false,
+            inputRef: "Email",
 
         },
         {
             label: "Contact Number",
             type: "tel",
-            mandatory: true
+            mandatory: true,
+            inputRef: "Contact Number",
 
         },
         {
             label: "Github",
             type: "text",
-            mandatory: false
+            mandatory: false,
 
+            inputRef: "Github",
         },
         {
             label: "Linkedin",
             type: "text",
-            mandatory: false
+            mandatory: false,
+            inputRef: "Linkedin",
 
         },
         {
             label: "Portfolio Website",
             type: "text",
-            mandatory: false
+            mandatory: false,
+            inputRef: "Portfolio Website",
 
         },
 
@@ -141,6 +148,7 @@ export interface field {
     textArea?: boolean;
     size?: Number;
     inputRef?: any;
+    onValueChange?:any;
 }
 export interface cv {
     name?: string;
