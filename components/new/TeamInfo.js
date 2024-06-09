@@ -47,7 +47,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaLinkedin className="icon" />
+          {/* <FaLinkedin className="icon" /> */}
         </a>
         <a
           href="https://www.facebook.com/danish.armani.18"
@@ -55,7 +55,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaFacebook className="icon" />
+          {/* <FaFacebook className="icon" /> */}
         </a>
       </div>
       <div className="second-member">
@@ -85,7 +85,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGlobe className="icon" />
+          {/* <FaGlobe className="icon" /> */}
           {/* <FaGithub className="icon" /> */}
         </a>
         <a
@@ -94,7 +94,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGithub className="icon" />
+          {/* <FaGithub className="icon" /> */}
         </a>
         <a
           href="https://www.linkedin.com/in/sameerstg/"
@@ -102,7 +102,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaLinkedin className="icon" />
+          {/* <FaLinkedin className="icon" /> */}
         </a>
       </div>{" "}
       <div className="first-member">
@@ -132,7 +132,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGithub className="icon" />
+          {/* <FaGithub className="icon" /> */}
         </a>
         <a
           href="https://www.linkedin.com/in/danish-ahmed-b8a508229/"
@@ -140,7 +140,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaLinkedin className="icon" />
+          {/* <FaLinkedin className="icon" /> */}
         </a>
         <a
           href="https://www.facebook.com/danish.armani.18"
@@ -148,7 +148,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaFacebook className="icon" />
+          {/* <FaFacebook className="icon" /> */}
         </a>
       </div>
       <div className="second-member">
@@ -178,7 +178,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGlobe className="icon" />
+          {/* <FaGlobe className="icon" /> */}
           {/* <FaGithub className="icon" /> */}
         </a>
         <a
@@ -187,7 +187,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGithub className="icon" />
+          {/* <FaGithub className="icon" /> */}
         </a>
         <a
           href="https://www.linkedin.com/in/sameerstg/"
@@ -195,7 +195,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaLinkedin className="icon" />
+          {/* <FaLinkedin className="icon" /> */}
         </a>
       </div>
     </div>
