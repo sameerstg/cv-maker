@@ -7,7 +7,6 @@ const personalDetails: form = {
             label: "eg: Sameer Ahmed",
             type: "text",
             mandatory: true,
-            inputRef:"Full Name"
 
 
         },
@@ -15,21 +14,18 @@ const personalDetails: form = {
             label: "Job Title",
             type: "text",
             mandatory: true,
-            inputRef: "Job Title",
 
         },
         {
             label: "Email",
             type: "text",
             mandatory: false,
-            inputRef: "Email",
 
         },
         {
             label: "Contact Number",
             type: "tel",
             mandatory: true,
-            inputRef: "Contact Number",
 
         },
         {
@@ -37,20 +33,17 @@ const personalDetails: form = {
             type: "text",
             mandatory: false,
 
-            inputRef: "Github",
         },
         {
             label: "Linkedin",
             type: "text",
             mandatory: false,
-            inputRef: "Linkedin",
 
         },
         {
             label: "Portfolio Website",
             type: "text",
             mandatory: false,
-            inputRef: "Portfolio Website",
 
         },
 
@@ -62,7 +55,7 @@ const summary: form = {
             label: "Summary",
             type: "text",
             mandatory: true,
-            textArea: true
+            textArea: true,
 
         }
     ]
@@ -72,52 +65,58 @@ export const workHistory: form = {
     experience: true,
     formName: "Work History", fieldsWithType: [
         {
+            title: "Company Name",
             label: "Company Name",
             type: "text",
-            mandatory: true
+            mandatory: true,
 
         },
         {
+            title: "Job Title",
             label: "Job Title",
             type: "text",
-            mandatory: true
+            mandatory: true,
 
         },
         {
+            title: "Country",
             label: "Country",
             type: "text",
-            mandatory: false
+            mandatory: false,
 
         },
         {
+            title: "City",
             label: "City",
             type: "text",
-            mandatory: false
+            mandatory: false,
 
         },
         {
+            title: "From",
             label: "From",
             type: "date",
-            mandatory: false
+            mandatory: false,
 
         },
         {
+            title: "Till",
             label: "Till",
             type: "date",
-            mandatory: false
+            mandatory: false,
 
         },
         {
             title: "Technologies",
             label: "Technologies e.g: Python, Photoshop, Blender, Game Development",
             type: "text",
-            mandatory: false
+            mandatory: false,
 
         },
         {
             label: "Description",
             type: "text",
-            mandatory: false
+            mandatory: false,
 
         },
     ]
@@ -133,7 +132,7 @@ const education: form = {
             label: "Education",
             type: "text",
             mandatory: true,
-            textArea: true
+            textArea: true,
 
         }
     ]
@@ -147,8 +146,8 @@ export interface field {
     mandatory: boolean;
     textArea?: boolean;
     size?: Number;
-    inputRef?: any;
-    onValueChange?:any;
+    onValueChange?: any;
+    data?:any;
 }
 export interface cv {
     name?: string;
