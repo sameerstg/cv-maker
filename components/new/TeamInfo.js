@@ -2,7 +2,7 @@ import Danish from "../../components/new/Assets/Danish.jpg";
 import Danish2 from "../../components/new/Assets/Danish2.jpg";
 import SameerSTG from "../../components/new/Assets/SameerSTG.jpg";
 import SameerSTG2 from "../../components/new/Assets/SameerSTG2.jpeg";
-import { FaFacebook, FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+// import { FaFacebook, FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
 
 import "./TeamInfoStyles.css";
 import Image from "next/image";
