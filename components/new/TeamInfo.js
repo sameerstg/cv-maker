@@ -39,7 +39,7 @@ const TeamInfo = () => {
           rel="noopener noreferrer"
           className="icon-link"
         >
-          <FaGithub className="icon" />
+          {/* <FaGithub className="icon" /> */}
         </a>
         <a
           href="https://www.linkedin.com/in/danish-ahmed-b8a508229/"
