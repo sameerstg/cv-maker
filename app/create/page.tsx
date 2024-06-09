@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
 
-  const [cv, setCv] = useState<cv | null>(null)
   const [data, setData] = useState<Data[]>([]);
   const handleCvFromChild = (cv: any) => {
     // setCv(cv);
@@ -58,5 +57,5 @@ export default function Home() {
 
 export interface Data {
   key: string;
-  value: string;
+  value: any;
 }

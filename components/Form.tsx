@@ -2,34 +2,34 @@
 import InputField from "@/components/InputField";
 import { cv, field } from "@/static/forms";
 import SkillsAdd from "./SkillsAdd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExperienceAdd from "./ExperinceAdd";
 import Link from "next/link";
+import { Data } from "@/app/create/page";
 
 export default function Form(props: form) {
-  interface Data {
-    key: string,value: string;
-  }
-  const [data, setData] = useState<Data[]>([]);
 
-  
-  function onValueChange(key: string, value: string) {
-    if (props.onDataClick) {
+  const [data, setData] = useState<Data[]>([]);
+  useEffect(() => {
+    onValueChange("", "")
+  }, [data]);
+
+
+  function onValueChange(key: string, value: any) {
+    if (key !== "" && value !== "") {
+
       // Find index of the key in data
       const index = data.findIndex(item => item.key === key);
-      
+
       if (index !== -1) {
         const newData = data;
         data[index].value = value
         setData(newData);
-        } else {
-          setData(data => [...data, { key, value }]);
+      } else {
+        setData(data => [...data, { key, value }]);
       }
-      
-      console.log(data);
-  
-      // props.onDataClick({});
     }
+    console.log(data)
   }
   function submit(e: React.FormEvent<HTMLFormElement>) {
 
@@ -52,13 +52,13 @@ export default function Form(props: form) {
           props.skills ?
             <div className="md:col-span-2">
 
-              <SkillsAdd />
+              <SkillsAdd onValueChanged={onValueChange} />
             </div>
             :
 
             props.experience ?
               <div className="w-full md:col-span-2">
-                <ExperienceAdd />
+                <ExperienceAdd onValueChanged={onValueChange} />
 
               </div>
               :
@@ -66,14 +66,14 @@ export default function Form(props: form) {
                 field.textArea ?
                   <div key={key} className="w-full md:col-span-2" >
                     {
-                      <InputField inputRef={field.inputRef} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
+                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
                     }
                   </div>
                   :
                   <div key={key} className="w-full ">
                     {
 
-                      <InputField inputRef={field.inputRef} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
+                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
 
 
                     }

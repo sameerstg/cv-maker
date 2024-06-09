@@ -1,8 +1,10 @@
 'use client'
-import { useState } from "react";
-function SkillsAdd() {
+import { useEffect, useState } from "react";
+function SkillsAdd(props: any) {
     const [skills, setSkills] = useState<string[]>([]);
-
+    useEffect(() => {
+        onValueChange()
+    }, [skills])
     function addSkill(e: any) {
         // if (e.key !== "Enter") return;
         // const inputField = document.querySelector(".addSkill") as HTMLInputElement;
@@ -17,9 +19,15 @@ function SkillsAdd() {
             setSkills([...skills, inputField.value]);
             inputField.value = "";
         }
+        onValueChange()
     }
     function removeSkill(index: number) {
         setSkills(skills.filter((_, idx) => idx !== index));
+        onValueChange()
+    }
+    function onValueChange() {
+if(skills.length == 0)return;
+        props.onValueChanged("skills", skills)
     }
     return (
         <div className='flex flex-col  justify-center  text-center w-full mx-auto gap-8 my-4'>
