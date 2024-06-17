@@ -11,36 +11,42 @@ const personalDetails: form = {
 
         },
         {
+            title: "Job Title",
             label: "Job Title",
             type: "text",
             mandatory: true,
 
         },
         {
+            title: "Email",
             label: "Email",
             type: "text",
             mandatory: false,
 
         },
         {
+            title: "Contact Number",
             label: "Contact Number",
             type: "tel",
             mandatory: true,
 
         },
         {
+            title: "Github",
             label: "Github",
             type: "text",
             mandatory: false,
 
         },
         {
+            title: "Linkedin",
             label: "Linkedin",
             type: "text",
             mandatory: false,
 
         },
         {
+            title: "Portfolio Website",
             label: "Portfolio Website",
             type: "text",
             mandatory: false,
@@ -52,6 +58,7 @@ const personalDetails: form = {
 const summary: form = {
     formName: "Summary", fieldsWithType: [
         {
+            title:"Summary",
             label: "Summary",
             type: "text",
             mandatory: true,
@@ -114,6 +121,7 @@ export const workHistory: form = {
 
         },
         {
+            title:"Description",
             label: "Description",
             type: "text",
             mandatory: false,
@@ -129,6 +137,7 @@ const skills: form = {
 const education: form = {
     formName: "Education", fieldsWithType: [
         {
+            title: "Education",
             label: "Education",
             type: "text",
             mandatory: true,
@@ -138,7 +147,7 @@ const education: form = {
     ]
 };
 
-export const allForms: form[] = [personalDetails, summary, workHistory, skills];
+export const allForms: form[] = [workHistory,personalDetails, summary, workHistory, skills];
 export interface field {
     title?: string;
     label?: string;
@@ -147,7 +156,7 @@ export interface field {
     textArea?: boolean;
     size?: Number;
     onValueChange?: any;
-    data?:any;
+    data?: any;
 }
 export interface cv {
     name?: string;

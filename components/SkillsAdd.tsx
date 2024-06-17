@@ -1,39 +1,57 @@
 'use client'
+import { Data, getData } from "@/app/create/page";
 import { useEffect, useState } from "react";
-function SkillsAdd(props: any) {
+
+
+interface props {
+    data: Data[];
+    onValueChanged: any;
+}
+function SkillsAdd(props: props) {
     const [skills, setSkills] = useState<string[]>([]);
     useEffect(() => {
-        onValueChange()
+
+        var newData = getData(props.data, "Skills")
+        if (newData?.value != null) {
+
+            setSkills(newData.value);
+            console.log(newData)
+            // props.onValueChanged("Skills", newData)
+        }
+
+
+
+
+    }, [])
+
+    useEffect(() => {
+        if(skills.length != 0)
+       props.onValueChanged("Skills",skills) 
+
     }, [skills])
     function addSkill(e: any) {
-        // if (e.key !== "Enter") return;
-        // const inputField = document.querySelector(".addSkill") as HTMLInputElement;
-        // if (inputField.value.trim() !== "") {
-        //     setSkills([...skills, inputField.value]);
-        //     inputField.value = "";
-        // }
+        
+    //   console.log(e) 
     }
     function addSkillButton(b: any) {
         const inputField = document.querySelector(".addSkill") as HTMLInputElement;
         if (inputField.value.trim() !== "") {
             setSkills([...skills, inputField.value]);
             inputField.value = "";
+            props.onValueChanged("Skills", skills)
+
         }
-        onValueChange()
     }
     function removeSkill(index: number) {
         setSkills(skills.filter((_, idx) => idx !== index));
-        onValueChange()
+        props.onValueChanged("Skills", skills)
     }
-    function onValueChange() {
-if(skills.length == 0)return;
-        props.onValueChanged("skills", skills)
-    }
+
     return (
         <div className='flex flex-col  justify-center  text-center w-full mx-auto gap-8 my-4'>
             <div className='flex items-center  gap-2'>
                 <h1>Enter Skill :</h1>
-                <input className={"bg-[#262626] px-2 py-1 rounded-lg addSkill"} type="text" placeholder={"eg. Python"} onKeyDown={addSkill} ></input>
+                <input className={"bg-[#262626] px-2 py-1 rounded-lg addSkill"} type="text" placeholder={"eg. Python"} onKeyDown={x=>addSkill} ></input>
                 <input className="rounded-md px-2 py-1  bg-[#8a8a8a] text-black" type="button" onClick={addSkillButton} value="Add" ></input>
             </div>
             <div className="flex gap-2 flex-wrap md:justify-center">

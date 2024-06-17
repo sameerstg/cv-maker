@@ -11,7 +11,9 @@ export default function Home() {
   const handleCvFromChild = (cv: any) => {
     // setCv(cv);
   };
-
+  function onValueChange(data: any) {
+    console.log(data)
+  }
 
   function handleNext(e: any) {
 
@@ -48,7 +50,7 @@ export default function Home() {
       </div>
 
       {
-        < Form experience={allForms[currentForm].experience} onDataClick={handleCvFromChild} formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
+        < Form onValueChange={onValueChange} experience={allForms[currentForm].experience} onDataClick={handleCvFromChild} formName={allForms[currentForm].formName} skills={allForms[currentForm].skills} fieldsWithType={allForms[currentForm].fieldsWithType} submitCallback={handleSubmit} backCallback={handleBack} nextCallback={handleNext} next={currentForm !== allForms.length - 1} back={currentForm !== 0} />
       }
 
     </div>
@@ -58,4 +60,11 @@ export default function Home() {
 export interface Data {
   key: string;
   value: any;
+}
+export function getData(data: Data[], key: string) {
+  var index = data.findIndex(x => x.key === key)
+  // console.log(key)
+  // console.log(data[index])
+
+  return index !== -1 ? data[index] :null; 
 }

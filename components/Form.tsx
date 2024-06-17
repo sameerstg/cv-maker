@@ -5,7 +5,7 @@ import SkillsAdd from "./SkillsAdd";
 import { useEffect, useState } from "react";
 import ExperienceAdd from "./ExperinceAdd";
 import Link from "next/link";
-import { Data } from "@/app/create/page";
+import { Data, getData } from "@/app/create/page";
 
 export default function Form(props: form) {
 
@@ -29,7 +29,8 @@ export default function Form(props: form) {
         setData(data => [...data, { key, value }]);
       }
     }
-    console.log(data)
+    // console.log(data)
+    props.onValueChange(data)
   }
   function submit(e: React.FormEvent<HTMLFormElement>) {
 
@@ -52,13 +53,13 @@ export default function Form(props: form) {
           props.skills ?
             <div className="md:col-span-2">
 
-              <SkillsAdd onValueChanged={onValueChange} />
+              <SkillsAdd data={data} onValueChanged={onValueChange} />
             </div>
             :
 
             props.experience ?
               <div className="w-full md:col-span-2">
-                <ExperienceAdd onValueChanged={onValueChange} />
+                <ExperienceAdd data={getData(data, "Experience")} onValueChanged={onValueChange} />
 
               </div>
               :
@@ -66,16 +67,13 @@ export default function Form(props: form) {
                 field.textArea ?
                   <div key={key} className="w-full md:col-span-2" >
                     {
-                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
+                      <InputField data={getData(data, field.title ? field.title  : "")} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
                     }
                   </div>
                   :
                   <div key={key} className="w-full ">
                     {
-
-                      <InputField title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
-
-
+                      <InputField data={getData(data, field.title ? field.title : "")} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} onValueChange={onValueChange} />
                     }
                   </div>
               ))
@@ -96,7 +94,6 @@ export default function Form(props: form) {
             <button className="bg-cyan-800 font-bold px-8 py-1 rounded-md mx-auto " type="submit"  >
 
               <Link href={'/'}>
-
                 Submit
               </Link>
 
@@ -118,4 +115,5 @@ export interface form {
   onDataClick?: (cv: any) => void;
   back?: boolean;
   next?: boolean;
+  onValueChange?: any;
 }

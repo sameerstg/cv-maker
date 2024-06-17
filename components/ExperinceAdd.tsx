@@ -4,17 +4,41 @@ import { useEffect, useState } from "react";
 import { workHistory } from "@/static/forms"
 import Form, { form } from "./Form";
 import InputField from "./InputField";
-import { Data } from "@/app/create/page";
+import { Data, getData } from "@/app/create/page";
 
 function ExperienceAdd(props: any) {
-    const [experience, setExperience] = useState<form[]>([workHistory]);
+    const [experience, setExperience] = useState<form[]>([]);
 
     const [data, setData] = useState<Data[]>([]);
     useEffect(() => {
-        onValueChange("", "");
-    }, [experience]);
+
+        if (data.length == 0) {
+            if (props.data?.value != null) {
+
+                for (let index = 0; index < props.data.value.length; index++) {
+                    addExperience()
+                    console.log("adding exp")
+
+                }
+                setData(props.data?.value)
+            }
+            else {
+                console.log("no data")
+                addExperience()
+            }
+        }
+        console.log(data)
+        // if (data.length > 0)
+        //     props.onValueChanged("Experience", data)
+
+    }, [data])
+
     function addExperienceButton(b: any) {
         b.preventDefault();
+        addExperience();
+    }
+    function addExperience() {
+
         setExperience([...experience, workHistory])
     }
     function removeExperience(e: any, index: number) {
@@ -36,8 +60,9 @@ function ExperienceAdd(props: any) {
 
         }
         // console.log(data)
-        if(data.length <= 0)return;
-        props.onValueChanged("Experience",data)
+        if (data?.length <= 0) return;
+        props.onValueChanged("Experience", data)
+        props.onValueChanged("Experience", data)
     }
 
     return (
@@ -50,7 +75,7 @@ function ExperienceAdd(props: any) {
                     experience.map((form, key) => (
 
 
-                        <Experience onValueChange={onValueChange} form={form} removeExperience={removeExperience} key={key} index={key} />
+                        <Experience data={data ? data[key] : []} onValueChange={onValueChange} form={form} removeExperience={removeExperience} key={key} index={key} />
 
 
                     ))
@@ -63,6 +88,16 @@ function ExperienceAdd(props: any) {
 }
 function Experience(props: any) {
     const [data, setData] = useState<Data[]>([]);
+
+
+
+    useEffect(() => {
+        if (props.data?.value) {
+            setData(props.data.value)
+            console.log(data)
+            console.log(data[0]?.value)
+        }
+    }, [data])
     function onValueChange(key: string, value: string) {
         if (key !== "" && value !== "") {
             const index = data.findIndex(item => item.key === key);
@@ -76,7 +111,6 @@ function Experience(props: any) {
             }
         }
         props.onValueChange(props.index, data)
-        // console.log(data)
     }
     return (
         <div className="w-full">
@@ -92,14 +126,14 @@ function Experience(props: any) {
                                 field.textArea ?
                                     <div className="w-full md:col-span-2" >
                                         {
-                                            <InputField onValueChange={onValueChange} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
+                                            <InputField data={data[key2]?.value} onValueChange={onValueChange} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
                                         }
                                     </div>
                                     :
                                     <div className="w-full">
                                         {
 
-                                            <InputField onValueChange={onValueChange} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
+                                            <InputField data={data[key2]?.value } onValueChange={onValueChange} title={field.title} label={field.label} type={field.type} mandatory={field.mandatory} textArea={field.textArea} />
                                         }
 
                                     </div>
