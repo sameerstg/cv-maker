@@ -39,9 +39,6 @@ class Navbar extends Component {
             );
           })}
         </ul>
-        {/* Sign Up and Login buttons */}
-        {/* <button id="button1" onClick={this.handleSignUp}>Sign Up</button>
-            <button id="button2" onClick={this.handleLogin}>Login</button> */}
         <SignInBtn />
       </nav>
     );

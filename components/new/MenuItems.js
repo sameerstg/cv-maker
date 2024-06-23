@@ -28,6 +28,12 @@ export const MenuItems = [
         url : '/create',
         cName : "nav-links",
         icon : "fa-solid fa-address-book"
+    },
+    {
+        title : "Sample",
+        url : '/samplecv',
+        cName : "nav-links",
+        icon : "fa-solid fa-address-book"
     }
     // {
     //     title : "Sign Up",

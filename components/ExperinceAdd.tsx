@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { workHistory } from "@/static/forms"
 import Form, { form } from "./Form";
 import InputField from "./InputField";
-import { Data, getData } from "@/app/create/page";
+import { Data } from "@/models/data";
+// import { Data, getData } from "@/app/create/page";
 
 function ExperienceAdd(props: any) {
     const [experience, setExperience] = useState<form[]>([]);
