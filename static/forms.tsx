@@ -147,7 +147,7 @@ const education: form = {
     ]
 };
 
-export const allForms: form[] = [workHistory,personalDetails, summary, workHistory, skills];
+export const allForms: form[] = [personalDetails, summary, workHistory, skills];
 export interface field {
     title?: string;
     label?: string;
