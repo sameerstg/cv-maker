@@ -1,5 +1,5 @@
 'use client'
-import { Data, getData } from "@/app/create/page";
+import { Data, getData } from "../models/data";
 import { useEffect, useState } from "react";
 
 

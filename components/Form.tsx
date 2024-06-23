@@ -5,7 +5,7 @@ import SkillsAdd from "./SkillsAdd";
 import { useEffect, useState } from "react";
 import ExperienceAdd from "./ExperinceAdd";
 import Link from "next/link";
-import { Data, getData } from "@/app/create/page";
+import { Data, getData } from "../models/data";
 
 export default function Form(props: form) {
 
