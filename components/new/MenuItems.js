@@ -31,7 +31,7 @@ export const MenuItems = [
     },
     {
         title : "Sample",
-        url : '/samplecv',
+        url : '/sampleCv',
         cName : "nav-links",
         icon : "fa-solid fa-address-book"
     }
