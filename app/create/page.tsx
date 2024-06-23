@@ -2,8 +2,8 @@
 import Form from "@/components/Form";
 import RoundedStatus from "@/components/RoundedStatus";
 import { Data } from "@/models/data";
-import { allForms, cv } from '@/static/forms'
-import { useRef, useState } from "react";
+import { allForms} from '@/static/forms'
+import { useState } from "react";
 
 export default function Home() {
   const [currentForm, setcurrentForm] = useState(0)
