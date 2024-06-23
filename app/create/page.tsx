@@ -1,7 +1,7 @@
 'use client'
 import Form from "@/components/Form";
 import RoundedStatus from "@/components/RoundedStatus";
-import { Data } from "@/models/data";
+import { Data } from "../../models/data";
 import { allForms} from '@/static/forms'
 import { useState } from "react";
 
